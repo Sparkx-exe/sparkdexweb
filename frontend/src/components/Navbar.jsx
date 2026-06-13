@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useFavourites } from '../context/FavouritesContext';
-import { Sun, Moon, Heart, Search, BookOpen, Menu, X } from 'lucide-react';
+import { Sun, Moon, Heart, Search, BookOpen, Menu, X, Smartphone } from 'lucide-react';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -52,6 +52,18 @@ const Navbar = () => {
               </Link>
             ))}
 
+            {/* Android Download Button */}
+            <a
+              href="https://github.com/Sparkx-exe/Sparkdex/releases/tag/v1.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-day-accent dark:bg-night-accent text-white text-sm font-semibold hover:opacity-90 transition-all duration-200 shadow-sm hover:scale-105"
+              title="Download Android App"
+            >
+              <Smartphone className="w-4 h-4" />
+              <span>Android App</span>
+            </a>
+
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -63,7 +75,19 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-4">
+          <div className="flex md:hidden items-center gap-3">
+            {/* Android Download Button Mobile */}
+            <a
+              href="https://github.com/Sparkx-exe/Sparkdex/releases/tag/v1.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-day-accent dark:bg-night-accent text-white text-xs font-semibold hover:opacity-90 transition-all duration-200"
+              title="Download Android App"
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              <span>App</span>
+            </a>
+
             {/* Theme Toggle Mobile */}
             <button
               onClick={toggleTheme}
@@ -107,6 +131,17 @@ const Navbar = () => {
               )}
             </Link>
           ))}
+
+          {/* Android Download in Mobile Menu */}
+          <a
+            href="https://github.com/Sparkx-exe/Sparkdex/releases/tag/v1.0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium bg-day-accent/10 text-day-accent dark:bg-night-accent/10 dark:text-night-accent"
+          >
+            <Smartphone className="w-5 h-5" />
+            <span>Download Android App</span>
+          </a>
         </div>
       )}
     </nav>
