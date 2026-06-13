@@ -73,7 +73,7 @@ const Reader = () => {
 
       // Construct absolute URLs
       const constructedPages = filenames.map(
-        (file) => `${baseUrl}/data/${hash}/${file}`
+        (file) => `https://sparkdexweb.onrender.com/image/${baseUrl.replace("https://", "")}/data/${hash}/${file}`
       );
       
       setPages(constructedPages);
@@ -491,4 +491,5 @@ const Reader = () => {
 };
 
 export default Reader;
+
 
