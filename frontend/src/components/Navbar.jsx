@@ -54,7 +54,7 @@ const Navbar = () => {
 
             {/* Android Download Button */}
             <a
-              href="https://github.com/Sparkx-exe/Sparkdex/releases/tag/v1.0"
+              href="https://github.com/Sparkx-exe/Sparkdex/releases/download/v1.0/Sparkdex.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-day-accent dark:bg-night-accent text-white text-sm font-semibold hover:opacity-90 transition-all duration-200 shadow-sm hover:scale-105"
@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="flex md:hidden items-center gap-3">
             {/* Android Download Button Mobile */}
             <a
-              href="https://github.com/Sparkx-exe/Sparkdex/releases/tag/v1.0"
+              href="https://github.com/Sparkx-exe/Sparkdex/releases/download/v1.0/Sparkdex.apk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-day-accent dark:bg-night-accent text-white text-xs font-semibold hover:opacity-90 transition-all duration-200"
@@ -134,7 +134,7 @@ const Navbar = () => {
 
           {/* Android Download in Mobile Menu */}
           <a
-            href="https://github.com/Sparkx-exe/Sparkdex/releases/tag/v1.0"
+            href="https://github.com/Sparkx-exe/Sparkdex/releases/download/v1.0/Sparkdex.apk"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium bg-day-accent/10 text-day-accent dark:bg-night-accent/10 dark:text-night-accent"
