@@ -33,7 +33,7 @@ const Home = () => {
         setLoadingPopular(true);
         // Fetch popular manga pool (48 items)
         const res = await fetch(
-          'https://api.mangadex.org/manga?limit=48&includes[]=cover_art&includes[]=author&order[followedCount]=desc&contentRating[]=safe&contentRating[]=suggestive'
+          'https://sparkdexweb.onrender.com/api/manga?limit=48&includes[]=cover_art&includes[]=author&order[followedCount]=desc&contentRating[]=safe&contentRating[]=suggestive'
         );
         if (!res.ok) throw new Error('Failed to fetch popular manga');
         const data = await res.json();
@@ -55,7 +55,7 @@ const Home = () => {
       try {
         setLoadingRecent(true);
         const res = await fetch(
-          `https://api.mangadex.org/manga?limit=${LIMIT}&offset=0&includes[]=cover_art&includes[]=author&order[latestUploadedChapter]=desc&contentRating[]=safe&contentRating[]=suggestive`
+          `https://sparkdexweb.onrender.com/api/manga?limit=${LIMIT}&offset=0&includes[]=cover_art&includes[]=author&order[latestUploadedChapter]=desc&contentRating[]=safe&contentRating[]=suggestive`
         );
         if (!res.ok) throw new Error('Failed to fetch recent manga');
         const data = await res.json();
@@ -78,7 +78,7 @@ const Home = () => {
     try {
       setLoadingMoreRecent(true);
       const res = await fetch(
-        `https://api.mangadex.org/manga?limit=${LIMIT}&offset=${currentOffset}&includes[]=cover_art&includes[]=author&order[latestUploadedChapter]=desc&contentRating[]=safe&contentRating[]=suggestive`
+        `https://sparkdexweb.onrender.com/api/manga?limit=${LIMIT}&offset=${currentOffset}&includes[]=cover_art&includes[]=author&order[latestUploadedChapter]=desc&contentRating[]=safe&contentRating[]=suggestive`
       );
       if (!res.ok) throw new Error('Failed to fetch more recent manga');
       const data = await res.json();
@@ -201,3 +201,4 @@ const Home = () => {
 };
 
 export default Home;
+

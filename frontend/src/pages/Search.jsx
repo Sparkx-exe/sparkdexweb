@@ -26,7 +26,7 @@ const Search = () => {
     const fetchGenres = async () => {
       try {
         setLoadingGenres(true);
-        const res = await fetch('https://api.mangadex.org/manga/tag');
+        const res = await fetch('https://sparkdexweb.onrender.com/api/manga/tag');
         if (!res.ok) throw new Error('Failed to fetch tags');
         const data = await res.json();
         
@@ -63,7 +63,7 @@ const Search = () => {
   const fetchManga = useCallback(async (currentOffset = 0, append = false) => {
     try {
       setLoading(true);
-      let url = `https://api.mangadex.org/manga?limit=${LIMIT}&offset=${currentOffset}&includes[]=cover_art&includes[]=author&contentRating[]=safe&contentRating[]=suggestive`;
+      let url = `https://sparkdexweb.onrender.com/api/manga?limit=${LIMIT}&offset=${currentOffset}&includes[]=cover_art&includes[]=author&contentRating[]=safe&contentRating[]=suggestive`;
 
       if (debouncedQuery.trim()) {
         url += `&title=${encodeURIComponent(debouncedQuery)}`;
@@ -313,3 +313,4 @@ const Search = () => {
 };
 
 export default Search;
+

@@ -25,7 +25,7 @@ export const getMangaCoverUrl = (manga) => {
   if (!coverArt || !coverArt.attributes) return null;
   const fileName = coverArt.attributes.fileName;
   if (!fileName) return null;
-  return `https://uploads.mangadex.org/covers/${manga.id}/${fileName}.256.jpg`;
+  return `https://sparkdexweb.onrender.com/image/uploads.mangadex.org/covers/${manga.id}/${fileName}.256.jpg`;
 };
 
 export const getMangaAuthor = (manga) => {
@@ -40,3 +40,4 @@ export const getMangaStatusLabel = (status) => {
   if (!status) return 'Unknown';
   return status.charAt(0).toUpperCase() + status.slice(1);
 };
+

@@ -37,7 +37,7 @@ const MangaDetail = () => {
         setError(null);
 
         // Fetch manga resource + relationships (cover_art, author, artist)
-        const mangaRes = await fetch(`https://api.mangadex.org/manga/${id}?includes[]=cover_art&includes[]=author&includes[]=artist`);
+        const mangaRes = await fetch(`https://sparkdexweb.onrender.com/api/manga/${id}?includes[]=cover_art&includes[]=author&includes[]=artist`);
         if (!mangaRes.ok) throw new Error('Manga not found or API error');
         const mangaData = await mangaRes.json();
         
@@ -49,7 +49,7 @@ const MangaDetail = () => {
         // Fetch chapters feed
         // We fetch in English (translatedLanguage[]=en) and order by chapter desc
         const feedRes = await fetch(
-          `https://api.mangadex.org/manga/${id}/feed?limit=500&translatedLanguage[]=en&order[chapter]=desc&includes[]=scanlation_group&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic`
+          `https://sparkdexweb.onrender.com/api/manga/${id}/feed?limit=500&translatedLanguage[]=en&order[chapter]=desc&includes[]=scanlation_group&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic`
         );
         if (!feedRes.ok) throw new Error('Failed to fetch chapter feed');
         const feedData = await feedRes.json();
@@ -328,3 +328,4 @@ const MangaDetail = () => {
 };
 
 export default MangaDetail;
+

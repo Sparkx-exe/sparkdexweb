@@ -37,7 +37,7 @@ const Reader = () => {
       setError(null);
 
       // Fetch chapter details
-      const chRes = await fetch(`https://api.mangadex.org/chapter/${chapterId}?includes[]=manga`);
+      const chRes = await fetch(`https://sparkdexweb.onrender.com/api/chapter/${chapterId}?includes[]=manga`);
       if (!chRes.ok) throw new Error('Failed to fetch chapter details');
       const chData = await chRes.json();
       
@@ -59,7 +59,7 @@ const Reader = () => {
       }
 
       // Fetch chapter page filenames and base server URL
-      const pagesRes = await fetch(`https://api.mangadex.org/at-home/server/${chapterId}`);
+      const pagesRes = await fetch(`https://sparkdexweb.onrender.com/api/at-home/server/${chapterId}`);
       if (!pagesRes.ok) throw new Error('Failed to load chapter pages from server');
       const pagesData = await pagesRes.json();
       
@@ -97,7 +97,7 @@ const Reader = () => {
     const fetchMangaFeed = async () => {
       try {
         const feedRes = await fetch(
-          `https://api.mangadex.org/manga/${mangaId}/feed?limit=500&translatedLanguage[]=en&order[chapter]=desc&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic`
+          `https://sparkdexweb.onrender.com/api/manga/${mangaId}/feed?limit=500&translatedLanguage[]=en&order[chapter]=desc&contentRating[]=safe&contentRating[]=suggestive&contentRating[]=erotica&contentRating[]=pornographic`
         );
         if (!feedRes.ok) throw new Error('Failed to fetch manga chapters');
         const feedData = await feedRes.json();
@@ -131,7 +131,7 @@ const Reader = () => {
 
         // Fetch Manga Title if we don't have it
         if (!mangaTitle) {
-          const mangaRes = await fetch(`https://api.mangadex.org/manga/${mangaId}`);
+          const mangaRes = await fetch(`https://sparkdexweb.onrender.com/api/manga/${mangaId}`);
           const mangaData = await mangaRes.json();
           if (mangaData.data?.attributes?.title) {
             const titleObj = mangaData.data.attributes.title;
@@ -491,3 +491,4 @@ const Reader = () => {
 };
 
 export default Reader;
+

@@ -57,6 +57,20 @@ app.use('/api', async (req, res) => {
   }
 });
 
+
+// Image proxy endpoint
+app.get('/image/*', async (req, res) => {
+  try {
+    const imageUrl = req.params[0] + (req.query ? '?' + new URLSearchParams(req.query).toString() : '');
+    const response = await fetch('https://' + imageUrl);
+    const contentType = response.headers.get('content-type');
+    res.set('Content-Type', contentType);
+    const buffer = await response.arrayBuffer();
+    res.send(Buffer.from(buffer));
+  } catch (error) {
+    res.status(500).json({ error: 'Image proxy failed' });
+  }
+});
 // Basic health check
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'sparkdex-proxy' });
@@ -65,3 +79,4 @@ app.get('/health', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Sparkdex Proxy Server running on port ${PORT}`);
 });
+
